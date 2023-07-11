@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}{{ char_name }}{% endblock %}
+
+{% block content %}
+<body style="background-image: url('../static/iron-throne-wp.jpg')">
+    <div class="background-container book-page">
+        <img class="char-img" src="{{ char_image }}">
+        <div class="book-info">
+            <h3>{{ char_name }}</h3>
+            <p>Gender: {{ char_gender }}</p>
+            <p>Culture: {{ char_culture }}</p>
+            <p>Born: {{ char_born }}</p>
+            <p>Died: {{ char_died }}</p>
+            <p>Titles:</p>
+            <ul>
+                {% for title in char_titles %}
+                <li>{{ title }}</li>
+                {% endfor %}
+            </ul>
+            <p>Aliases:</p>
+            <ul>
+                {% for alias in char_aliases %}
+                <li>{{ alias }}</li>
+                {% endfor %}
+            </ul>
+            <p>Spouse: <a href="{{ url_for('get_char', char=char_spouse) }}">{{ char_spouse }}</a></p>
+            <p>Allegiance(s):</p>
+            <ul>
+                {% for allegiance in char_allegiance %}
+                <li>{{ allegiance }}</li>
+                {% endfor %}
+            </ul>
+            <p>Appears in:</p>
+            <ul>
+                {% for book in char_books %}
+                <li>{{ book }}</li>
+                {% endfor %}
+            </ul>
+            <p>Played by: {{ char_actor }}</p>
+
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}{{ house_name }}{% endblock %}
+
+{% block content %}
+<body style="background-image: url('../static/iron-throne-wp.jpg')">
+    <div class="background-container book-page">
+        <img class=house-img-med src="/static/house-images/house-{{ house_id }}.png">
+        <div class="book-info">
+            <h3>{{ house_name }}</h3>
+            <p>Region: {{ house_region }}</p>
+            <p>Words: {{ house_words }}</p>
+            <p>Held Titles:</p>
+            <ul>
+                {% for title in house_titles %}
+                <li>{{ title }}</li>
+                {% endfor %}
+            </ul>
+            <p>Seat(s):</p>
+            <ul>
+                {% for seat in house_seats %}
+                <li>{{ seat }}</li>
+                {% endfor %}
+            </ul>
+            <p>Ancestral Weapon(s):</p>
+            <ul>
+                {% for weapon in house_weapons %}
+                <li>{{ weapon }}</li>
+                {% endfor %}
+            </ul>
+            <p>Sworn Members:</p>
+            <ul class="member-list">
+                {% for member in house_members %}
+                <li><a href="{{ url_for('get_char', char=member) }}">{{ member }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <a href="{{ url_for('home') }}">Home</a>
+    </div>
+</body>
+{% endblock %}

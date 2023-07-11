@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %}Game of Thrones Book Data: Home{% endblock %}
+
+{% block content %}
+<body style="background-image: url('static/iron-throne-wp.jpg')">
+    <div class="background-container home-container">
+        <h1>Game of Thrones Book Data</h1>
+        <section class="book-section">
+            <h2>Books</h2>
+            <div class="book-list">
+                <div class="book-div">
+                    <a href="{{ url_for('get_book', book_id=1) }}">
+                        <p class="book-title">A Game of Thrones</p>
+                        <img class="book-img" src="/static/book-images/book-1.jpg">
+                    </a>
+                </div>
+                <div class="book-div">
+                    <a href="{{ url_for('get_book', book_id=2) }}">
+                        <p class="book-title">A Clash of Kings</p>
+                        <img class="book-img" src="/static/book-images/book-2.jpg">
+                    </a>
+                </div>
+                <div class="book-div">
+                    <a href="{{ url_for('get_book', book_id=3) }}">
+                        <p class="book-title">A Storm of Swords</p>
+                        <img class="book-img" src="/static/book-images/book-3.jpg">
+                    </a>
+                </div>
+                <div class="book-div">
+                    <a href="{{ url_for('get_book', book_id=4) }}">
+                        <p class="book-title">A Feast for Crows</p>
+                        <img class="book-img" src="/static/book-images/book-4.jpg">
+                    </a>
+                </div>
+                <div class="book-div">
+                    <a href="{{ url_for('get_book', book_id=8) }}">
+                        <p class="book-title">A Dance with Dragons</p>
+                        <img class="book-img" src="/static/book-images/book-8.jpg">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="house-section">
+            <h2>Houses</h2>
+            <div class="house-list">
+                <div class="house-div">
+                    <a href="{{ url_for('get_house', house_id=7) }}">
+                        <p class="house-name">House Arryn</p>
+                        <img class="house-img" src="/static/house-images/house-7.png">
+                    </a>
+                </div>
+                <div class="house-div">
+                    <a href="{{ url_for('get_house', house_id=17) }}">
+                        <p class="house-name">House Baratheon</p>
+                        <img class="house-img" src="/static/house-images/house-17.png">
+                    </a>
+                </div>
+                <div class="house-div">
+                    <a href="{{ url_for('get_house', house_id=169) }}">
+                        <p class="house-name">House Greyjoy</p>
+                        <img class="house-img" src="/static/house-images/house-169.png">
+                    </a>
+                </div>
+                <div class="house-div">
+                    <a href="{{ url_for('get_house', house_id=229) }}">
+                        <p class="house-name">House Lannister</p>
+                        <img class="house-img" src="/static/house-images/house-229.png">
+                    </a>
+                </div>
+                <div class="house-div">
+                    <a href="{{ url_for('get_house', house_id=285) }}">
+                        <p class="house-name">House Martell</p>
+                        <img class="house-img" src="/static/house-images/house-285.png">
+                    </a>
+                </div>
+                <div class="house-div">
+                    <a href="{{ url_for('get_house', house_id=362) }}">
+                        <p class="house-name">House Stark</p>
+                        <img class="house-img" src="/static/house-images/house-362.png">
+                    </a>
+                </div>
+                <div class="house-div">
+                    <a href="{{ url_for('get_house', house_id=378) }}">
+                        <p class="house-name">House Targaryen</p>
+                        <img class="house-img" src="/static/house-images/house-378.png">
+                    </a>
+                </div>
+                <div class="house-div">
+                    <a href="{{ url_for('get_house', house_id=395) }}">
+                        <p class="house-name">House Tully</p>
+                        <img class="house-img" src="/static/house-images/house-395.png">
+                    </a>
+                </div>
+                <div class="house-div">
+                    <a href="{{ url_for('get_house', house_id=398) }}">
+                        <p class="house-name">House Tyrell</p>
+                        <img class="house-img" src="/static/house-images/house-398.png">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+{% endblock %}
