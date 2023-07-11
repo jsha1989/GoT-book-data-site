@@ -23,22 +23,25 @@
                 <li>{{ alias }}</li>
                 {% endfor %}
             </ul>
-            <p>Spouse: <a href="{{ url_for('get_char', char=char_spouse) }}">{{ char_spouse }}</a></p>
+            <p>Spouse: {% for key, value in char_spouse.items() %}
+                <a href="{{ url_for('get_char', char_id=key) }}">{{ value }}{% endfor %}</a></p>
             <p>Allegiance(s):</p>
             <ul>
-                {% for allegiance in char_allegiance %}
-                <li>{{ allegiance }}</li>
+                {% for key, value in char_allegiance.items() %}
+                <li><a href="{{ url_for('get_house', house_id=key) }}">{{ value }}</a></li>
                 {% endfor %}
             </ul>
             <p>Appears in:</p>
             <ul>
-                {% for book in char_books %}
-                <li>{{ book }}</li>
+                {% for key, value in char_books.items() %}
+                <li><a href="{{ url_for('get_book', book_id=key) }}">{{ value }}</a></li>
                 {% endfor %}
             </ul>
             <p>Played by: {{ char_actor }}</p>
 
-            <a href="{{ url_for('home') }}">Home</a>
+            <div class="home-link">
+                <a href="{{ url_for('home') }}">Home</a>
+            </div>
         </div>
     </div>
 </body>

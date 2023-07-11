@@ -11,10 +11,11 @@
             <p>Pages: {{ pages }}</p>
             <p>POV Characters:</p>
             <ul>
-                {% for char in pov_chars %}
-                <li><a href="{{ url_for('get_char', char=char) }}">{{ char }}</a></li>
+                {% for key, value in pov_chars.items() %}
+                <li><a href="{{ url_for('get_char', char_id=key) }}">{{ value }}</a></li>
                 {% endfor %}
             </ul>
+
             <div class="home-link">
                 <a href="{{ url_for('home') }}">Home</a>
             </div>

@@ -29,12 +29,14 @@
             </ul>
             <p>Sworn Members:</p>
             <ul class="member-list">
-                {% for member in house_members %}
-                <li><a href="{{ url_for('get_char', char=member) }}">{{ member }}</a></li>
+                {% for key, value in house_members.items() %}
+                <li><a href="{{ url_for('get_char', char_id=key) }}">{{ value }}</a></li>
                 {% endfor %}
             </ul>
 
-            <a href="{{ url_for('home') }}">Home</a>
+            <div class="home-link">
+                <a href="{{ url_for('home') }}">Home</a>
+            </div>
     </div>
 </body>
 {% endblock %}
